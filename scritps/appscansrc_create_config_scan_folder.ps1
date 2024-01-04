@@ -26,9 +26,9 @@ if ($compiledArtifactFolder -ne "none"){
   write-output "login_file $aseHostname `"$aseToken`" -acceptssl" > script.scan
   write-output "RUNAS AUTO" >> script.scan
   write-output "of `"$projectDir\$compiledArtifactFolder`"" >> script.scan
-  write-output "sc `"$aseAppName-$BITBUCKET_BUILD_NUMBER.ozasmt`" -scanconfig `"$scanConfig`" -name `"$aseAppName-$BITBUCKET_BUILD_NUMBER`"" >> script.scan
-  write-output "report Findings pdf-detailed `"$$aseAppName-$BITBUCKET_BUILD_NUMBER.pdf`" `"$aseAppName-$BITBUCKET_BUILD_NUMBER.ozasmt`" -includeSrcBefore:5 -includeSrcAfter:5 -includeTrace:definitive -includeTrace:suspect -includeHowToFix" >> script.scan
-  write-output "pa `"$aseAppName-$BITBUCKET_BUILD_NUMBER.ozasmt`"" >> script.scan
+  write-output "sc `"$aseAppName-$jobId.ozasmt`" -scanconfig `"$scanConfig`" -name `"$aseAppName-$jobId`"" >> script.scan
+  write-output "report Findings pdf-detailed `"$$aseAppName-$jobId.pdf`" `"$aseAppName-$jobId.ozasmt`" -includeSrcBefore:5 -includeSrcAfter:5 -includeTrace:definitive -includeTrace:suspect -includeHowToFix" >> script.scan
+  write-output "pa `"$aseAppName-$jobId.ozasmt`"" >> script.scan
   write-output "exit" >> script.scan
   
   write-host "Config file created for compiled folder ($projectDir\$compiledArtifactFolder)."
@@ -37,9 +37,9 @@ else{
   write-output "login_file $aseHostname `"$aseToken`" -acceptssl" > script.scan
   write-output "RUNAS AUTO" >> script.scan
   write-output "of `"$projectDir`"" >> script.scan
-  write-output "sc `"$aseAppName-$BITBUCKET_BUILD_NUMBER.ozasmt`" -scanconfig `"$scanConfig`" -name `"$aseAppName-$BITBUCKET_BUILD_NUMBER`" -sourcecodeonly true" >> script.scan
-  write-output "report Findings pdf-detailed `"$aseAppName-$BITBUCKET_BUILD_NUMBER.pdf`" `"$aseAppName-$BITBUCKET_BUILD_NUMBER.ozasmt`" -includeSrcBefore:5 -includeSrcAfter:5 -includeTrace:definitive -includeTrace:suspect -includeHowToFix" >> script.scan
-  write-output "pa `"$aseAppName-$BITBUCKET_BUILD_NUMBER.ozasmt`"" >> script.scan
+  write-output "sc `"$aseAppName-$jobId.ozasmt`" -scanconfig `"$scanConfig`" -name `"$aseAppName-$jobId`" -sourcecodeonly true" >> script.scan
+  write-output "report Findings pdf-detailed `"$aseAppName-$jobId.pdf`" `"$aseAppName-$jobId.ozasmt`" -includeSrcBefore:5 -includeSrcAfter:5 -includeTrace:definitive -includeTrace:suspect -includeHowToFix" >> script.scan
+  write-output "pa `"$aseAppName-$jobId.ozasmt`"" >> script.scan
   write-output "exit" >> script.scan
   
   write-host "Config file created (source code only scan)."
