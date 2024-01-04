@@ -6,7 +6,8 @@ Requirements:<br>
 1 - AppScan Source in Windows Server.<br>
 2 - Add AppScan Source bin folder to Windows PATH Environment Variable.<br>
 3 - Install BitBucket Runner for Windows in same Windows Server that has AppScan Source.<br>
-4 - Create AppScan Enterprise token <install_dir>\bin\ounceautod.exe -u username -p password --persist.<br>
+4 - Change default Powershell from version 5 to 7. Doc: https://jira.atlassian.com/browse/BCLOUD-22076<br>
+5 - Create AppScan Enterprise token <install_dir>\bin\ounceautod.exe -u username -p password --persist.<br>
   Source: https://help.hcltechsw.com/appscan/Source/10.4.0/topics/ounce_auto_login.html <br>
   <br>
 
