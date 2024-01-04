@@ -13,9 +13,10 @@
 # limitations under the License.
 
 write-host "======== Step: Publishing Assessment in ASE ========"
+$projectDir=$pwd.Path
 # Creating script to get ozasmt scan result
 write-output "login_file $aseHostname $aseToken -acceptssl" > scriptpase.scan
-write-output "pase $CI_PROJECT_DIR\$aseAppName-$buildNumber.ozasmt -aseapplication $aseAppName -name $aseAppName-$buildNumber" >> scriptpase.scan
+write-output "pase $projectDir\$aseAppName-$buildNumber.ozasmt -aseapplication $aseAppName -name $aseAppName-$buildNumber" >> scriptpase.scan
 write-output "exit" >> scriptpase.scan  
 
 # Executing the script
