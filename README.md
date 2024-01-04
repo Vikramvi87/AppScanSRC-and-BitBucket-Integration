@@ -9,6 +9,7 @@ Requirements:<br>
 4 - Create AppScan Enterprise token <install_dir>\bin\ounceautod.exe -u username -p password --persist.<br>
   Source: https://help.hcltechsw.com/appscan/Source/10.4.0/topics/ounce_auto_login.html <br>
   <br>
+
 ```yaml
 pipelines:
   default:
